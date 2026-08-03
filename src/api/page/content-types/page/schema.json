@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Pages",
+    "description": "One entry per page of the website. Holds that page's SEO metadata and its editable text content."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pageKey": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "description": "Stable ID the website looks this page up by. Do NOT change once set. One of: home, about, portfolio, contact, faq, privacy, terms, blog."
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "description": "Internal label, shown in this list only. Not published."
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL path this page lives at, e.g. /about"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo",
+      "description": "Search-engine and social-sharing metadata for this page."
+    }
+  }
+}
